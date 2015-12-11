@@ -138,7 +138,7 @@ router.put('/me', auth.isAuth, (req, res) => {
 // the user may add books to cart
 router.put('/add-to-cart/:bookId', auth.isAuth, (req, res) => {
   User.findOneAndUpdate({_id: req.userId},
-   { $addToSet: { cart: req.params.bookId } },
+   { $push: { cart: req.params.bookId } },
    {new: true}, (err, doc) => {
     if (err) {
       checkError(err, res);

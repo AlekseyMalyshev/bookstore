@@ -11,12 +11,14 @@
           th.author Author
           th.title Title
           th.price Price
+          th.quantity qty
           th.cart
       tbody(ng-show='cart && cart.length > 0')
         tr(ng-repeat='book in cart')
           td.author {{book.author}}
           td.title "{{book.title}}"
           td.price ${{book.price.toFixed(2)}}
+          th.quantity {{book.qty}}
           td.cart
             i.fa.fa-trash-o(ng-click='remove(book._id)' title='Remove from cart')
       tfoot(ng-show='cart && cart.length > 0')
@@ -24,6 +26,7 @@
           td.author 
           td.your-total Your Total:
           td.total ${{total.toFixed(2)}}
+          td
           td.cart.checkout
             a(ui-sref='checkout')
               i.fa.fa-fast-forward(title='Proceed to checkout')

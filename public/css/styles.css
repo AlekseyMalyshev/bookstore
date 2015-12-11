@@ -41,6 +41,10 @@ th.price {
   width: 10%;
 }
 
+th.quantity {
+  width: 5%;
+}
+
 th.cart {
   width: 0;
 }
