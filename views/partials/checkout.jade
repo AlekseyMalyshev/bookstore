@@ -1,0 +1,26 @@
+.container(ng-init='init()')
+  .row
+    table.table.booklist
+      thead
+        tr
+          th.header(colspan='4') Please review and confirm your order
+        tr(ng-show='!cart || cart.length === 0')
+          th(colspan='4') You do not have any items in your cart. Check out our 
+            a(ui-sref='storefront') book selection.
+        tr(ng-show='cart && cart.length > 0')
+          th.author Author
+          th.title Title
+          th.price Price
+      tbody(ng-show='cart && cart.length > 0')
+        tr(ng-repeat='book in cart')
+          td.author {{book.author}}
+          td.title {{book.title}}
+          td.price ${{book.price.toFixed(2)}}
+      tfoot(ng-show='cart && cart.length > 0')
+        tr
+          td.author 
+          td.your-total Your Total:
+          td.total ${{total.toFixed(2)}}
+
+    button.btn.btn-primary.pull-right(stripe-checkout='payNow', data-key='pk_test_LTXOM9v141afhZXM2d2POzFy', data-name='Readable Book Purchase', ng-attr-data-description='Book Order', ng-attr-data-amount='total.toFixed(2)')
+      | Complete Your Purchase

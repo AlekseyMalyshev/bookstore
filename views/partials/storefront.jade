@@ -1,0 +1,18 @@
+.container(ng-init='init()')
+  .row
+    table.table.booklist
+      thead
+        tr
+          th.header(colspan='4') Welcome to our Bookstore
+        tr
+          th.author Author
+          th.title Title
+          th.price Price
+          th.cart
+      tbody
+        tr(ng-repeat='book in books')
+          td.author {{book.author}}
+          td.title {{book.title}}
+          td.price ${{book.price.toFixed(2)}}
+          td.cart
+            i.fa.fa-cart-plus(ng-click='addToCart(book)' title='Add to cart')

@@ -1,0 +1,29 @@
+.container(ng-init='init()')
+  .row
+    table.table.booklist
+      thead
+        tr
+          th.header(colspan='4') View or edit your shopping cart
+        tr(ng-show='!cart || cart.length === 0')
+          th(colspan='4') You do not have any items in your cart. Check out our 
+            a(ui-sref='storefront') book selection.
+        tr(ng-show='cart && cart.length > 0')
+          th.author Author
+          th.title Title
+          th.price Price
+          th.cart
+      tbody(ng-show='cart && cart.length > 0')
+        tr(ng-repeat='book in cart')
+          td.author {{book.author}}
+          td.title {{book.title}}
+          td.price ${{book.price.toFixed(2)}}
+          td.cart
+            i.fa.fa-trash-o(ng-click='remove(book._id)' title='Remove from cart')
+      tfoot(ng-show='cart && cart.length > 0')
+        tr
+          td.author 
+          td.your-total Your Total:
+          td.total ${{total.toFixed(2)}}
+          td.cart.checkout
+            a(ui-sref='checkout')
+              i.fa.fa-fast-forward(title='Proceed to checkout')

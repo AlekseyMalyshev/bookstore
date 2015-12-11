@@ -1,0 +1,119 @@
+
+form.login button {
+  color: #ffffff;
+}
+
+button.facebook {
+  background-color: #36549E;
+}
+
+button.linkedin {
+  background-color: #0079BD;
+}
+
+button.twitter {
+  background-color: #00ACF6;
+}
+
+div.avatar {
+  text-align: center;
+}
+
+ul#user-menu {
+  min-width: 50px;
+}
+
+table th {
+  text-align: center;
+}
+
+th.header {
+  font-size: 18px;
+}
+
+th.author {
+}
+
+th.title {
+}
+
+th.price {
+  width: 10%;
+}
+
+th.cart {
+  width: 0;
+}
+
+table.booklist td {
+  vertical-align: middle;
+}
+
+table.booklist td.author {
+  font-style: italic;
+}
+
+table.booklist td.title {
+  font-weight: bold;
+}
+
+table.booklist td.price {
+  text-align: right;
+}
+
+table.booklist td.cart {
+  text-align: center;
+  font-size: 18px;
+}
+
+table.booklist td.your-total {
+  text-align: right;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+table.booklist td.total {
+  text-align: right;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+table.booklist td.cart>a {
+  color: #000000;
+}
+
+i.fa-fast-forward:hover,
+i.fa-cart-plus:hover {
+  cursor: pointer;
+  color: #6aff00;
+}
+
+i.fa-trash-o:hover {
+  cursor: pointer;
+  color: #ac0000;
+}
+
+div.book-name {
+  padding: 2px;
+  display: block;
+}
+
+div.book-name>a {
+  text-decoration: none;
+}
+
+table.store>tbody {
+  border: 3px solid #000000;
+}
+
+table.store {
+  margin-bottom: 75px;
+}
+
+table.store td {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000000;
+}

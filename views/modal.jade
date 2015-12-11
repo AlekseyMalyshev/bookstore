@@ -1,0 +1,25 @@
+#confirm.modal.fade
+  .modal-dialog.modal-md
+    .modal-content
+      .modal-header.text-center
+        h4.modal-title
+      .modal-body.row
+        .col-sm-6
+          button.btn.btn-md.btn-primary.btn-block.cancel(data-dismiss='modal', type='cancel')
+            i.fa.fa-times
+            |  Cancel
+        .col-sm-6
+          button.btn.btn-md.btn-danger.btn-block.confirm(data-dismiss='modal', type='submit')
+            i.fa.fa-check
+            |  OK
+
+#show-error.modal.fade
+  .modal-dialog.modal-md
+    .modal-content
+      .modal-header.text-center
+        h4.error
+      .modal-body.row
+        .col-sm-6.col-sm-offset-3
+          button.btn.btn-md.btn-default.btn-block.confirm(data-dismiss='modal', type='submit')
+            i.fa.fa-check
+            |  OK

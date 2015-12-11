@@ -1,0 +1,22 @@
+.container
+  .row
+    .col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+      h3.text-center Sign Up
+      hr.colorgraph
+      form(role='form', ng-submit='register(user.password === password_)')
+        fieldset
+          .form-group
+            input.form-control(type='email', ng-model='user.email', placeholder='Email', required, autofocus)
+          .form-group
+            input.form-control(type='password', ng-model='user.password', placeholder='Password', required)
+          .form-group
+            input.form-control(type='password', ng-model='password_', name="password" placeholder='Conform password', required)
+          .form-group
+            .col-sm-6
+              button.btn.btn-md.btn-primary.btn-block(ui-sref='login' type='reset')
+                i.fa.fa-times
+                |  Cancel
+            .col-sm-6
+              button.btn.btn-md.btn-success.btn-block.confirm(type='submit')
+                i.fa.fa-check
+                |  Register

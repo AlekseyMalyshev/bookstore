@@ -1,0 +1,29 @@
+{
+  "name": "message-board",
+  "description": "Super Message Board",
+  "main": "server.js",
+  "authors": [
+    "Aleksey Malyshev"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/AlekseyMalyshev/conversation",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.5.0",
+    "angular": "~1.4.8",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "satellizer": "~0.13.1",
+    "socket.io-client": "~1.3.7",
+    "angular-socket-io": "~0.7.0",
+    "angular-stripe-checkout": "~4.0.0"
+  }
+}

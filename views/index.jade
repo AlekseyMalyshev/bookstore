@@ -1,0 +1,64 @@
+doctype html
+html(lang='en' ng-app='Store')
+  head
+    title Online Book Store
+    link(href='/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+    link(href='/css/styles.css', rel='stylesheet')
+
+    script(src='/angular/angular.min.js', type='text/javascript')
+    script(src='/angular-ui-router/release/angular-ui-router.min.js', type='text/javascript')
+  body
+
+    nav.navbar.navbar-default(ng-controller='NavbarCtrl')
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar-collapse', aria-expanded='false')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(ui-sref='profile')
+            i(class='fa fa-user-secret')
+
+        #navbar-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(ui-sref='storefront' title='Shop books') Shop
+            li
+              a(ui-sref='cart' title='View cart') Cart
+            li
+              a(ui-sref='checkout' title='Checkout') Checkout
+            li
+              a(ui-sref='orders' title='Orders') Orders
+          ul.nav.navbar-nav.ng-hide.navbar-right(ng-hide='isLogged()')
+            li
+              a(ui-sref='login' title='Login') Login
+          ul.nav.navbar-nav.ng-hide.navbar-right(ng-show='isLogged()')
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false' ng-hide="isAuthenticated()")
+                | User 
+                span.caret
+              ul.dropdown-menu#user-menu
+                li
+                  a(ui-sref='login' ng-click="logout()") Logout
+
+    ui-view
+
+    include ./modal
+
+    script(src='/jquery/dist/jquery.min.js' type='text/javascript')
+    script(src='/bootstrap/dist/js/bootstrap.min.js' type='text/javascript')
+    script(src='/satellizer/satellizer.min.js', type='text/javascript')
+    script(src='/socket.io-client/socket.io.js', type='text/javascript')
+    script(src='/angular-socket-io/socket.min.js', type='text/javascript')
+    script(src='/angular-stripe-checkout/angular-stripe-checkout.js', type='text/javascript')
+
+    script(src='/js/app.js' type='text/javascript')
+    script(src='/js/cart.js' type='text/javascript')
+    script(src='/js/checkout.js' type='text/javascript')
+    script(src='/js/login.js' type='text/javascript')
+    script(src='/js/navbar.js' type='text/javascript')
+    script(src='/js/profile.js' type='text/javascript')
+    script(src='/js/register.js' type='text/javascript')
+    script(src='/js/storefront.js' type='text/javascript')

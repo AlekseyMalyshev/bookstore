@@ -1,0 +1,34 @@
+.container(ng-init='init()')
+  .row
+    .col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+      form(role='form', ng-submit='save()')
+        fieldset
+          .form-group.avatar
+            img(src='{{user.avatar}}' ng-show='user.avatar')
+          .form-group
+            input.form-control(type='email', ng-model='user.email', placeholder='Email address', required, autofocus)
+          .form-group
+            input.form-control(type='text', ng-model='user.firstName', placeholder='First name', required)
+          .form-group
+            input.form-control(type='text', ng-model='user.lastName', placeholder='Last name', required)
+          .form-group
+            input.form-control(type='text', placeholder='Address', ng-model='user.address')
+          .form-group
+            input.form-control(type='text', placeholder='zipcode', ng-model='user.zipcode')
+          .form-group
+            input.form-control(type='text', placeholder='Phone #', ng-model='user.phone')
+          .form-group
+            input.form-control(type='text', placeholder='City', ng-model='user.city')
+          .form-group
+            input.form-control(type='text', placeholder='State', ng-model='user.state')
+          .form-group
+            input.form-control(type='text', placeholder='Avatar', ng-model='user.avatar')
+          .form-group
+            .col-sm-6
+              button.btn.btn-md.btn-primary.btn-block(type='reset')
+                i.fa.fa-times
+                |  Cancel
+            .col-sm-6
+              button.btn.btn-md.btn-success.btn-block.confirm(type='submit')
+                i.fa.fa-check
+                |  Save
