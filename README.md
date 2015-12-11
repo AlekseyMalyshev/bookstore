@@ -1,16 +1,10 @@
 # Online Book Store
 
-Very simple implementation of the Book Store
+Sample online Book Store
 
 ##Features
 
-This book allows online players to choose go book board size and partner with other players.
-
-##Limitations
-
-- score is not calculated, players are responsible for obeing the rules of the book (the book rules are complicated, I do not have time to implement them)
-
-- winner is not calculated a looser should admit the loss
+This Book Store uses test Stripe account for checkout.
 
 ## Installation
 

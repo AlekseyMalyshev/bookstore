@@ -15,7 +15,7 @@
       tbody(ng-show='cart && cart.length > 0')
         tr(ng-repeat='book in cart')
           td.author {{book.author}}
-          td.title {{book.title}}
+          td.title "{{book.title}}"
           td.price ${{book.price.toFixed(2)}}
           td.cart
             i.fa.fa-trash-o(ng-click='remove(book._id)' title='Remove from cart')

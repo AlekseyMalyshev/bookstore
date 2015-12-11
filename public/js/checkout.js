@@ -24,9 +24,11 @@ app.controller('CheckoutCtrl', ['$scope', '$state', '$http', '$auth',
     $scope.payNow = function(tokenObj) {
       $http.post('/api/checkout', {
         token: tokenObj,
-        price: $scope.total
+        cart: $scope.cart
       })
       .then(function(res) {
+        $scope.cart = [];
+        localStorage.cartContent = JSON.stringify('[]');
         $('h4.error').text('Your payment has been processed. Thank you for placing the order.');
         $('div#show-error').modal();
         $state.go('storefront');
