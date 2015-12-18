@@ -17,7 +17,7 @@ We sent you this e-mail beacuse someone registered using this address.\n\
 if it was you, please go ahead and activate your account here:\n\
 \n\
 \n\
-http://localhost:3000/#/activate/' + token + '\n\
+https://afternoon-temple-8319.herokuapp.com/#/activate/' + token + '\n\
 \n\
 \n\
 Best Regards,\n\
