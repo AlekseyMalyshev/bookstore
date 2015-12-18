@@ -8,9 +8,9 @@ This version features user activation via email and passord reminder via email a
 
 Most new features can be found on the User menu bar in the right top corner.
 
-Remember for the phone to work corectly it should inlude international prefix (+1 for the US).
+Remember for the phone to work correctly it should inlcude international prefix (+1 for the US).
 
-User profile can be edited in the top left corner.
+User profile link is in the top left corner.
 
 If the user logs in with a social account, it is activated automatically. Otherwise
 the application will send a confirmation e-mail to activate the account.
