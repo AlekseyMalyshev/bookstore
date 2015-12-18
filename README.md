@@ -8,7 +8,7 @@ This version features user activation via email and passord reminder via email a
 
 Most new features can be found on the User menu bar in the right top corner.
 
-Remember for the phone to work correctly it should inlcude international prefix (+1 for the US).
+Remember for the phone to work correctly it should include international prefix (+1 for the US).
 
 User profile link is in the top left corner.
 
