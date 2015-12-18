@@ -9,7 +9,7 @@ let client = new twilio.RestClient(
 module.exports.reset = function (phone, password, cb) {
     client.sms.messages.create({
         to: phone,
-        from: '+19094734679',
+        from: process.env.TWILIO_PHONE_NUMBER,
         body: 'You have requested password reset. Your new password is: ' + password
     }, (err, msg) => {
         if (!err) {
