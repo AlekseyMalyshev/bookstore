@@ -14,7 +14,7 @@ app.controller('RegCtrl', ['$scope', '$http', '$state',
       }
 
       $http.post('/api/users/register', $scope.user).then(function(response) {
-        $('h4.error').text('Congratulations, you have registered for a Book Store book.');
+        $('h4.error').text('Congratulations, you have registered as a Book Store customer.');
         $('div#show-error').modal();
         $state.go('login');
       }, function(err) {

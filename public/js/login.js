@@ -13,7 +13,10 @@ app.controller('LoginCtrl', ['$scope', '$auth', '$http', '$templateCache', '$sta
         })
         .catch(function(err) {
           var text;
-          if (err.status === 401) {
+          if (err.status === 403) {
+            text = 'Your account is not yeat active. Please check your e-mail or resend confirmation.';
+          }
+          else if (err.status === 401) {
             text = 'Authentication failed, try again.';
           }
           else {
@@ -36,7 +39,6 @@ app.controller('LoginCtrl', ['$scope', '$auth', '$http', '$templateCache', '$sta
     };
 
     var combineCarts = function(user) {
-      console.log('comsbining');
       if (user) {
         var cart = JSON.parse(localStorage.cartContent || '[]');
         cart.forEach(function(book) {

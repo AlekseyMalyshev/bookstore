@@ -14,6 +14,7 @@ app.controller('ProfCtrl', ['$scope', '$http',
     };
 
     $scope.save = function() {
+      $scope.user.phone = '+' + $scope.user.phone.replace(/\D/g,'');
       $http.put('/api/users/me', $scope.user).then(function(response) {
         $('h4.error').text('Profile has been saved.');
         $('div#show-error').modal();

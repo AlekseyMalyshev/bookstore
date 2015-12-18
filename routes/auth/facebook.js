@@ -100,15 +100,13 @@ router.post('/', (req, res) => {
           user.firstName = profile.first_name;
           user.lastName = profile.last_name;
           user.avatar = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
+          user.active = true;
           user.save((err, doc) => {
             if (err) {
               console.log('err: ', err);
             }
-            let token = user.token();
-                        console.log('1 ', token);
-
             res.send({
-              token: token,
+              token: user.token(),
               user: user
             });
           });

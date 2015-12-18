@@ -1,0 +1,17 @@
+.container
+  .row
+    h3.text-center Reset password
+    form.login(role='form' ng-submit='reset(email)')
+      .col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+        fieldset
+          .form-group
+            input.form-control(type='email' ng-model='email' placeholder='Email address' required autofocus)
+          .form-group
+            input.btn.btn-md.btn-primary.btn-block.btn-bottom(type='submit' value='Reset')
+    form.login(role='form' ng-submit='reset_p(phone)')
+      .col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+        fieldset
+          .form-group
+            input.form-control(type='text' ng-model='phone' placeholder='Phone #' required)
+          .form-group
+            input.btn.btn-md.btn-primary.btn-block.btn-bottom(type='submit' value='Reset')

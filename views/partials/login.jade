@@ -1,6 +1,6 @@
 .container
   .row
-    h1.text-center Please Login to Join a Book
+    h3.text-center Please Login
     form.login(role='form' ng-submit='login(email, password)')
       .col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
         fieldset
@@ -10,8 +10,8 @@
             input.form-control(type='password' ng-model='user.password' placeholder='Password' required)
           .form-group
             input.btn.btn-md.btn-primary.btn-block.btn-bottom(type='submit' value='Login')
-          .form-group
-            input.btn.btn-md.btn-default.btn-block.btn-bottom(type='button' value='Sign Up' ui-sref='register')
+          hr
+          h5 Or login with:
           .form-group
             button.form-control.facebook(type='button' ng-click='authenticate(\'facebook\')')
               i.fa.fa-facebook

@@ -95,8 +95,8 @@ router.post('/', (req, res) => {
           user.firstName = profile.firstName;
           user.lastName = profile.lastName;
           user.avatar = profile.pictureUrl;
+          user.active = true;
           user.save((err, doc) => {
-            console.log('err: ', err);
             res.send({
               token: user.token(),
               user: user

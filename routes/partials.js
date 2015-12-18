@@ -21,6 +21,14 @@ router.get('/cart', (req, res) => {
   res.render('partials/' + 'cart');
 });
 
+router.get('/activate', (req, res) => {
+  res.render('partials/' + 'activate');
+});
+
+router.get('/reset', (req, res) => {
+  res.render('partials/' + 'reset');
+});
+
 router.get('/:name', auth.isAuth, (req, res) => {
   res.render('partials/' + req.params.name);
 });

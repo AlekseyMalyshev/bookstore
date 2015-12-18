@@ -1,0 +1,10 @@
+.container(ng-init='init()')
+  .row
+    h3.text-center Re-send activation e-mail
+    form.login(role='form' ng-submit='send(email)')
+      .col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+        fieldset
+          .form-group
+            input.form-control(type='email' ng-model='email' placeholder='Email address' required autofocus)
+          .form-group
+            input.btn.btn-md.btn-primary.btn-block.btn-bottom(type='submit' value='Send')

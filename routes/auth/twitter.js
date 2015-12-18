@@ -122,6 +122,7 @@ router.post('/', (req, res) => {
             user.firstName = names[0];
             user.lastName = names[1];
             user.avatar = profile.profile_image_url.replace('_normal', '');
+            user.active = true;
             user.save((err, doc) => {
               if (err) {
                 console.log('err: ', err);

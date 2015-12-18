@@ -9,13 +9,14 @@ let Schema = mongoose.Schema;
 
 let userSchema = mongoose.Schema({
     // local login
+    email: {type: String, index: { unique: true }},
     password: String,
+    active: Boolean,
     // Social networks
     facebook: String,
     twitter: String,
     linkedin: String,
     // Personal details
-    email: {type: String, index: { unique: true }},
     firstName: String,
     lastName: String,
     address: String,
@@ -30,7 +31,7 @@ let userSchema = mongoose.Schema({
       quantity: {type: Number, required: true},
       updated: {type: Date, default: Date.now}
     }],
-    updated: {type: Date, default: Date.now},
+    updated: {type: Date, default: Date.now}
   });
 
 userSchema.methods.encryptPass = function(cb) {
@@ -58,15 +59,19 @@ userSchema.methods.validatePass = function(password, cb) {
   });
 }
 
-userSchema.methods.token = function() {
+userSchema.methods.token = function(expires) {
+  if (!expires) {
+    expires = 30 * 24;
+  }
+
   let payload = {
     _id: this._id,
     name: this.firstName
   };
   let secret = process.env.JWT_SECRET;
-  let token = jwt.sign(payload, secret);
-
-  return token;
+  return jwt.sign(payload, secret, {
+    expiresIn: expires * 60 * 60
+  } );
 }
 
 module.exports = mongoose.model('users', userSchema);

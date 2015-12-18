@@ -17,6 +17,11 @@ app.config(function($stateProvider, $urlRouterProvider, $authProvider) {
       templateUrl: 'partials/cart',
       controller: 'CartCtrl'
     })
+    .state('reset', {
+      url: '/reset',
+      templateUrl: 'partials/reset',
+      controller: 'ResetCtrl'
+    })
     .state('checkout', {
       url: '/checkout/:id',
       templateUrl: 'partials/checkout',
@@ -26,6 +31,16 @@ app.config(function($stateProvider, $urlRouterProvider, $authProvider) {
       url: '/login',
       templateUrl: 'partials/login',
       controller: 'LoginCtrl'
+    })
+    .state('activate', {
+      url: '/activate',
+      templateUrl: 'partials/activate',
+      controller: 'ActivCtrl'
+    })
+    .state('activate2', {
+      url: '/activate/:token',
+      templateUrl: 'partials/activate',
+      controller: 'ActivCtrl'
     })
     .state('orders', {
       url: '/orders',
